@@ -1,0 +1,7 @@
+from langchain_core.prompts import ChatPromptTemplate
+english_to_spanish_template = ChatPromptTemplate.from_template("""Translate the following from English to Spanish. \
+Provide only the translated text: '{english_statement}'""")
+prompt = english_to_spanish_template.invoke("Today is a good day.")
+
+prompt
+print(llm.invoke(prompt).content)
