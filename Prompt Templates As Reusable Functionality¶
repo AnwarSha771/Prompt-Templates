@@ -1,0 +1,18 @@
+one_off_prompt = "Translate the following from English to Spanish: 'Today is a good day.'"
+print(llm.invoke(one_off_prompt).content)
+def translate_from_english_to_spanish(english_statement):
+    return f"Translate the following from English to Spanish. Provide just the translated text: {english_statement}"
+english_statements = [
+    'Today is a good day.',
+    'Tomorrow will be even better.',
+    'Next week, who can say.'
+]
+prompts = [translate_from_english_to_spanish(english_statement) for english_statement in english_statements]
+
+prompts
+translations = llm.batch(prompts)
+for translation in translations:
+    print(translation.content)
+ef translate(from_language, to_language, statement):
+    return f"Translate the following from {from_language} to {to_language}. Provide only the translated text: {statement}"
+print(llm.invoke(translate('English', 'French', 'Computers have many languages of their own')).content)
