@@ -1,0 +1,16 @@
+english_to_spanish_template = ChatPromptTemplate.from_template("""Translate the following from English to Spanish. \
+provide only the translated text '{english_statement}'""")
+
+prompt = english_to_spanish_template.invoke("Today is a good day.")
+
+print(llm.invoke(prompt).content)
+english_to_spanish_template.invoke("Today is a good day.")
+english_to_spanish_template.invoke({"english_statement": "Today is a good day."})
+translate_template = ChatPromptTemplate.from_template("Translate the following from {from_language} to {to_language}. \
+provide only the translated text: {statement}"
+prompt = translate_template.invoke({
+    "from_language": "English",
+    "to_language": "French",
+    "statement": "Sometimes a little additional complexity is worth it."
+})
+print(llm.invoke(prompt).content)
