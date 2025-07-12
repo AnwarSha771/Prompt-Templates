@@ -1,0 +1,5 @@
+print(prompt)
+response = client.chat.completions.create(
+    model=model,
+    messages=[{'role': 'user', 'content': prompt}]
+)
