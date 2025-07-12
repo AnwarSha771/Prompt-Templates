@@ -1,0 +1,11 @@
+#imports
+from langchain_nvidia_ai_endpoints import ChatNVIDIA
+from langchain_core.prompts import ChatPromptTemplate
+#create model instance
+base_url = 'http://llama:8000/v1'
+model = 'meta/llama-3.1-8b-instruct'
+llm = ChatNVIDIA(base_url=base_url, model=model, temperature=0)
+99 * 64
+def multiply_two_numbers(a, b):
+    return a * b
+multiply_two_numbers(99, 64)
